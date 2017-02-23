@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="robots" content="index,nofollow">
+	<meta name="description">
+	<meta name="author">
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/upload.css" />
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<title>CULCAT</title>
+	<!-- [if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div>
+				<h1><a href="index.html"><img src="images/common/logo.jpg" alt="CULCAT" /></a></h1>
+				<div id="navi">
+					<ul>
+						<li>
+							<h2><a href="creators.html">Creators</a></h2>
+						</li>
+						<li>
+							<h2><a href="arts.html">Arts</a></h2>
+						</li>
+						<li>
+							<h2><a href="calendar.html">Culture Calendar</a></h2>
+						</li> 
+					</ul>
+				</div>
+				<!-- 로그인 전 -->
+				<div id="topMenu">
+					<div><a class="top-btn top-btn2" href="login.html">Login</a></div>
+					<div class="search">
+						<form action="get" name="">
+							<input type="text" name="" title="작가 및 작품 검색"/>
+							<a href="#"><img src="images/common/search_icon.gif" alt="검색하기" /></a>
+						</form> 
+					</div>
+				</div>
+				<!-- 로그인 후
+				<div id="topMenu">
+					<div class="artist">
+						<p class="artist-img">
+							<a href="#"><img src="images/common/artist_default_img.jpg" alt="artist image" /></a>
+						</p> //알림팝업
+						<p class="artist-name"><a href="#">손고래</a></p> //마이페이지로 이동
+					</div>
+					<div><a class="top-btn top-btn1" href="upload.html">Upload</a></div>
+					<div><a class="top-btn top-btn2" href="#">Logout</a></div>
+					<div class="search">
+						<form action="get" name="">
+							<input type="text" name="" title="작가 및 작품 검색"/>
+							<a href="#"><img src="images/common/search_icon.gif" alt="검색하기" /></a>
+						</form> 
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<div id="container">
+			<div class="sub-title">
+				<div>
+					<h2>Upload - Picture</h2>
+				</div>
+			</div>
+			<div id="contents" class="upload">
+				<form name="" method="post" action="">
+
+					<div class="pic-filebox preview-image"> 
+						<input class="upload-name" value="파일선택" disabled="disabled" > 
+						<label for="input-file">업로드</label> 
+						<input type="file" id="input-file" class="upload-hidden">
+						<script type="text/javascript">
+							var imgTarget = $('.preview-image .upload-hidden');imgTarget.on('change', function(){ var parent = $(this).parent(); parent.children('.upload-display').remove(); if(window.FileReader){  if (!$(this)[0].files[0].type.match(/image\//)) return; var reader = new FileReader(); reader.onload = function(e){ var src = e.target.result; parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>'); } reader.readAsDataURL($(this)[0].files[0]); } else { $(this)[0].select(); $(this)[0].blur(); var imgSrc = document.selection.createRange().text; parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>'); var img = $(this).siblings('.upload-display').find('img'); img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; } });
+						</script>
+					</div>
+					<!-- 진욱아 이미지 업로드 어떻게하지........?
+						http://webdir.tistory.com/435
+						여기서 하라는대로 했는데 안된다능 ㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+						포토도 똑같애!
+					-->
+
+					<div class="explain">
+						<textarea name="" id=""></textarea>
+					</div>
+					<div>
+						<table>
+							<colgroup>
+								<col width="25%"/>
+								<col width="75%"/>
+							</colgroup>
+							<tr>
+								<th>
+									<label for="">작품명</label>
+								</th>
+								<td class="art-name">
+									<input type="text" name=""  />
+									<span>최대 30자</span>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="price">가격 설정</label>
+								</th>
+								<!-- 판매에 체크해야 text box활성화 되게, 가격에 , 나오게 해줘 -->
+								<td class="price">
+									<input type="text" name="" id="price" />원
+									<span>
+										<input type="checkbox" name="" id="sell"/>
+										<label for="sell">판매합니다.</label>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="notice">
+						<p>작품 업로드 시 이 작품의 저작권 소유자이며, <a href="#">서비스 운영원칙</a>에 자동으로 동의 한 것으로 간주합니다.</p>
+						<p>작품 도용 등 타인의 권리를 침해하는 경우 이용약관 및 법률에 의해 제재를 받을 수 있습니다.</p>
+					</div>
+					<div class="upload-btn">
+						<button class="btn">등록하기</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<ul>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">서비스소개</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">서비스 이용약관</a></li>
+				</ul>
+				<p>대표자 : 이영준 ｜ 사업자등록번호 : 123-456-789456 ｜ 대표전화 : 010-2721-6631</p>
+				<p>ⓒ CULCAT All rights reserved. Designed & Programmed by CULCAT.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

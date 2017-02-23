@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="robots" content="index,nofollow">
+	<meta name="description">
+	<meta name="author">
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/user.css" />
+	<title>CULCAT</title>
+	<!-- [if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div>
+				<h1><a href="index.html"><img src="images/common/logo.jpg" alt="CULCAT" /></a></h1>
+				<div id="navi">
+					<ul>
+						<li>
+							<h2><a href="creators.html">Creators</a></h2>
+						</li>
+						<li>
+							<h2><a href="arts.html">Arts</a></h2>
+						</li>
+						<li>
+							<h2><a href="calendar.html">Culture Calendar</a></h2>
+						</li> 
+					</ul>
+				</div>
+				<!-- 로그인 전 -->
+				<div id="topMenu">
+					<div><a class="top-btn top-btn2" href="login.html">Login</a></div>
+					<div class="search">
+						<form action="get" name="">
+							<input type="text" name="" title="작가 및 작품 검색"/>
+							<a href="#"><img src="images/common/search_icon.gif" alt="검색하기" /></a>
+						</form> 
+					</div>
+				</div>
+				<!-- 로그인 후
+				<div id="topMenu">
+					<div class="artist">
+						<p class="artist-img">
+							<a href="#"><img src="images/common/artist_default_img.jpg" alt="artist image" /></a>
+						</p> //알림팝업
+						<p class="artist-name"><a href="#">손고래</a></p> //마이페이지로 이동
+					</div>
+					<div><a class="top-btn top-btn1" href="upload.html">Upload</a></div>
+					<div><a class="top-btn top-btn2" href="#">Logout</a></div>
+					<div class="search">
+						<form action="get" name="">
+							<input type="text" name="" title="작가 및 작품 검색"/>
+							<a href="#"><img src="images/common/search_icon.gif" alt="검색하기" /></a>
+						</form> 
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<form action="" method="POST">
+			<div id="container">
+				<div class="sub-title">
+					<div>
+						<h2>Join</h2>
+					</div>
+				</div>
+				<div id="contents" class="join">
+					<form name="" method="post" action="">
+						<h3>필수입력사항</h3>
+						<table class="required">
+							<caption>회원가입하기 필수입력사항</caption>
+							<colgroup>
+								<col width="25%"/>
+								<col width="75%"/>
+							</colgroup>
+							<tr>
+								<th><label for="id">아이디 <span>*</span></label></th>
+								<td>
+									<input type="text" id="id" name="userId" placeholder="아이디" required/>
+									<!-- <span>사용할 수 있는 아이디입니다.</span> -->
+									<span class="red">중복된 아이디가 있습니다!</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="pw">비밀번호 <span>*</span></label></th>
+								<td>
+									<input type="password" id="pw" name="userPwd" maxlength="20" placeholder="비밀번호" required/>
+									<span>20글자 이내의 영문 소문자 + 숫자 조합</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="pw2">비밀번호 확인 <span>*</span></label></th>
+								<td>
+									<input type="password" id="pw2" name="userConfirmPwd" maxlength="20" placeholder="비밀번호 확인" required/>
+									<!-- <span>비밀번호를 한 번 더 입력해주세요.</span> -->
+									<!-- <span>비밀번호가 일치합니다.</span> -->
+									<span class="red">비밀번호가 일치하지 않습니다!</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="name">이름 <span>*</span></label></th>
+								<td><input type="text" id="name" name="userName" placeholder="이름" required/></td>
+							</tr>
+							<tr>
+								<th><label for="nickname">별명 <span>*</span></label></th>
+								<td>
+									<input type="text" id="nickname" name="userNick" placeholder="별명" required/>
+									<span><input type="checkbox" name="useNick" id="usenick" value="" /> <label for="usenick">이름대신 별명 사용</label></span>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="email">E-mail <span>*</span></label></th>
+								<td>
+									<input type="text" name="eMail_01" id="email" placeholder="example"/> @
+									<input type="text" name="eMail_02" placeholder="cuclat.com" />
+								</td>
+							</tr>
+							<tr>
+								<th><label for="gender">성별 <span>*</span></label></th>
+								<td>
+									<label for="gender1">여성</label>
+									<input type="radio" id="gender1" name="gender" value="female" required/>
+									<label for="gender2">남성</label>
+									<input type="radio" id="gender2" name="gender" value="male" required/>
+								</td>
+							</tr>
+						</table>
+						<h3>선택사항</h3>
+						<table class="select">
+							<caption>회원가입하기 선택사항</caption>
+							<colgroup>
+								<col width="25%"/>
+								<col width="75%"/>
+							</colgroup>
+							<tr>
+								<th><label for="mysite">개인사이트</label></th>
+								<td><input type="text" id="mysite" name="userSite"/></td>
+							</tr>
+							<tr>
+								<th><label for="sns">SNS</label></th>
+								<td class="sns">
+									<div>
+										<label for="sns1">Facebook</label>
+										<input type="text" id="sns1" name="userFacebook"/>
+									</div>
+									<div>
+										<label for="sns2">Instagram</label>
+										<input type="text" id="sns2" name="userInsta"/>
+									</div>
+									<div>
+										<label for="sns3">Twitter</label>
+										<input type="text" id="sns3" name="userTwit"/>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><label for="intro_msg">한 줄 소개</label></th>
+								<td><input type="text" id="intro_msg" name="userIntro"/></td>
+							</tr>
+						</table>
+						<div class="join-btn">
+							<button class="btn">회원가입</button> <!-- submit 변경 img로 -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</form>
+		<div id="footer">
+			<div>
+				<ul>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">서비스소개</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">서비스 이용약관</a></li>
+				</ul>
+				<p>대표자 : 이영준 ｜ 사업자등록번호 : 123-456-789456 ｜ 대표전화 : 010-2721-6631</p>
+				<p>ⓒ CULCAT All rights reserved. Designed & Programmed by CULCAT.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
